@@ -3,6 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/virtual_clinic', { useNewUrlParser: true, useUnifiedTopology: true });
+
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const familyMembersRoute = require('./routes/familyMembers');
+
+
+app.use(cors());
+app.use(bodyParser.json());
+
+app.use('/api/familyMembers', familyMembersRoute);
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
