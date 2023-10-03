@@ -23,4 +23,4 @@ function ViewFamilyMembers({ patientID }) {
     );
 }
 
-export default View
+export default ViewFamilyMembers
