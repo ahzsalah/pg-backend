@@ -49,6 +49,11 @@ const patientSchema = new Schema({
         mobile_number: {
             type: String,
             required: true
+        },
+
+        relation_to_the_patient: {
+            type: String,
+            required: true
         }
     }
 }, {timestamps: true})
