@@ -30,7 +30,8 @@ const patientSchema = new Schema({
 
     gender: {
         type: String,
-        required: true
+        required: true,
+        enum: ['male', 'female'] 
     },
 
     mobile_number: {
@@ -39,7 +40,6 @@ const patientSchema = new Schema({
     },
 
     emergency_contact: {
-        required:true,
         
         full_name:{
             type: String,
@@ -53,7 +53,8 @@ const patientSchema = new Schema({
 
         relation_to_the_patient: {
             type: String,
-            required: true
+            required: true,
+            enum: ['Wife', 'Husband', 'Child', "Father", "Mother"]
         }
     }
 }, {timestamps: true})

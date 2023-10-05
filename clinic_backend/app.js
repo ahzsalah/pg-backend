@@ -4,8 +4,11 @@ var express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+//Import Routes
 const familyMembersRoute = require('./routes/familyMembers');
 const doctorsRoute = require('./routes/doctors');
+
+const signUp = require('./routes/signup')
 
 
 var app = express();
@@ -75,6 +78,7 @@ app.get('/', (req, res) => {
   res.send('Welcome back, user') 
 })
 
+app.use('/', signUp)
 
 
 // catch 404 and forward to error handler

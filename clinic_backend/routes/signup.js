@@ -10,4 +10,4 @@ const {
 //Sign up Patient
 router.post('/signup', signUp)
 
-module.exports =router
+module.exports = router
