@@ -9,3 +9,5 @@ const {
 
 //View and Filter All Perscriptions
 router.get('/', viewFilterPerscriptions)
+
+module.exports = router
