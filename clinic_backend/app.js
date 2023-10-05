@@ -8,7 +8,8 @@ const bodyParser = require('body-parser');
 const familyMembersRoute = require('./routes/familyMembers');
 const doctorsRoute = require('./routes/doctors');
 
-const signUp = require('./routes/signup')
+const signUp = require('./routes/signup');
+const Perscriptions = require('./routes/Perscriptions');
 
 
 var app = express();
@@ -55,6 +56,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use('/api/familyMembers', familyMembersRoute);
 app.use('/api/doctors', doctorsRoute);
+app.use('/', signUp)
+app.use('/api/perscription', Perscriptions)
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
@@ -77,8 +80,6 @@ app.use('/api/doctors', doctorsRoute);
 app.get('/', (req, res) => {
   res.send('Welcome back, user') 
 })
-
-app.use('/', signUp)
 
 
 // catch 404 and forward to error handler
