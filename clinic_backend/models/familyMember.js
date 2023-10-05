@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const familyMemberSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+const familyMemberSchema = new Schema({
     patientID: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Patient' 
@@ -20,13 +22,13 @@ const familyMemberSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true,
-        enum: ['Male', 'Female'] 
+        enum: ['male', 'female'] 
     },
     relation: {
         type: String,
         required: true,
-        enum: ['Wife', 'Husband', 'Child']
+        enum: ['wife', 'husband', 'child']
     }
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model('FamilyMember', familyMemberSchema);

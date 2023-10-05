@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import AddFamilyMember from './AddFamilyMember';
 import ViewFamilyMembers from './ViewFamilyMembers';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import DoctorList from './DoctorList';
+import DoctorDetails from './DoctorDetails';
 
 
 function App() {
